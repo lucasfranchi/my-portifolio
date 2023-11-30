@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -11,6 +11,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 })
 export class HomeComponent {
   icons = {
-    faBars
+    faBars,
+    faArrowRight
   }
 }

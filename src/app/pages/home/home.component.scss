@@ -5,13 +5,34 @@
 
   &__content-right {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     width: 10%;
     transition: 0.5s;
     background-color: #e7ded5;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    overflow: hidden;
+
+    &__icon {
+      width: 100%;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #3e3e39;
+
+      &-arrow {
+        position: absolute;
+        color: white;
+        font-size: 4rem;
+        left: -50px;
+        bottom: 20%;
+        z-index: 10;
+        animation:
+        arrow-balance 1s normal infinite;
+      }
+    }
 
     &__text {
       display: flex;
@@ -19,18 +40,30 @@
       font-size: 3rem;
       transform: rotate(270deg);
       text-wrap: nowrap;
-      margin: 0;
+      margin: 0 auto;
+      bottom: 30%;
     }
 
     &:hover {
       width: 20%;
       transition: 1s;
+
+      .lsf-home__content-right__icon-arrow {
+        opacity: 0;
+        transition: 0.5s;
+      }
+
+      .lsf-home__content-right__text {
+        opacity: 0;
+        transition: 0.5s;
+      }
     }
   }
 
   &__content-left {
     display: flex;
     width: 90%;
+    position: relative;
     padding: 5rem 0 0 5rem;
     color: white;
     background: rgb(14,67,117);
@@ -63,5 +96,10 @@
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }
+  }
+
+  @keyframes arrow-balance {
+    from, to { left: -50px }
+    50% { left: -30px }
   }
 }
