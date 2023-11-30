@@ -1,13 +1,32 @@
 <div class="lsf-home">
   <div class="lsf-home__content-left">
     <div class="lsf-home__content-left__letreiro">
-      <p>asdfasdf</p>
-      <h1>Desenvolvedor Front-End.</h1>
+      <lsf-slider
+        [fixedTitle]="'Hello, '"
+        [sliderList]="sliderList"
+      ></lsf-slider>
+      <p class="lsf-home__content-left__letreiro-p">
+        Me chamo Lucas Franchi e sou
+      </p>
+      <h1 class="lsf-home__content-left__letreiro-h1">
+        Desenvolvedor Front-End.
+      </h1>
     </div>
   </div>
   <div class="lsf-home__content-right">
-    <fa-icon class="lsf-home__content-right__icon-arrow" [icon]="icons.faArrowRight"></fa-icon>
-    <fa-icon class="lsf-home__content-right__icon" [icon]="icons.faBars"></fa-icon>
-    <p class="lsf-home__content-right__text">Know my job</p>
+    <fa-icon
+      class="lsf-home__content-right__icon-arrow"
+      [icon]="icons.faArrowRight"
+    ></fa-icon>
+    <fa-icon
+      class="lsf-home__content-right__icon"
+      [icon]="icons.faBars"
+    ></fa-icon>
+    <p class="lsf-home__content-right__text">Conheça meu trabalho</p>
+    <div  class="lsf-home__content-right__menu">
+      <div class="lsf-home__content-right__menu-options" *ngFor="let menuOpt of menuOptions">
+        {{ menuOpt }}
+      </div>
+    </div>
   </div>
 </div>

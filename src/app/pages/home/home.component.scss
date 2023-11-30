@@ -13,6 +13,32 @@
     align-items: flex-start;
     justify-content: center;
 
+    &__menu {
+      display: flex;
+      overflow: hidden;
+      position: absolute;
+      top: 4rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      height: 50%;
+      width: 10px;
+      opacity: 0;
+      padding: 0 3rem;
+
+      &-options {
+        display: flex;
+        color: #3e3e39;
+        font-size: 2.5rem;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+          color: #54544d;
+        }
+      }
+    }
+
     &__icon {
       width: 100%;
       margin-top: 1rem;
@@ -30,14 +56,14 @@
         bottom: 20%;
         z-index: 10;
         animation:
-        arrow-balance 1s normal infinite;
+          arrow-balance 1s normal infinite;
       }
     }
 
     &__text {
       display: flex;
       color: #aa9d91;
-      font-size: 3rem;
+      font-size: 35px;
       transform: rotate(270deg);
       text-wrap: nowrap;
       margin: 0 auto;
@@ -53,6 +79,12 @@
         transition: 0.5s;
       }
 
+      .lsf-home__content-right__menu {
+        opacity: 1;
+        transition: 2s;
+        width: 75%;
+      }
+
       .lsf-home__content-right__text {
         opacity: 0;
         transition: 0.5s;
@@ -66,21 +98,25 @@
     position: relative;
     padding: 5rem 0 0 5rem;
     color: white;
-    background: rgb(14,67,117);
-    background: radial-gradient(circle, rgba(14,67,117,1) 0%, rgba(11,56,99,1) 60%, rgba(9,39,68,1) 100%);
+    background: rgb(14, 67, 117);
+    background: radial-gradient(circle, rgba(14, 67, 117, 1) 0%, rgba(11, 56, 99, 1) 60%, rgba(9, 39, 68, 1) 100%);
 
     &__letreiro {
-      p {
+      &-p {
+        position: relative;
         font-size: 2rem;
+        margin: 1rem 0 1rem 2.5rem;
       }
 
-      h1 {
+      &-h1 {
+        position: relative;
         overflow: hidden;
         border-right: 0.20rem solid orange;
         white-space: nowrap;
         font-size: 3rem;
         font-weight: 600;
         letter-spacing: .15em;
+        margin: 1rem 0 1rem 2.5rem;
         animation:
           typing 3.5s steps(40, end),
           blink-caret .75s step-end infinite;
@@ -89,17 +125,36 @@
   }
 
   @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+      width: 0
+    }
+
+    to {
+      width: 100%
+    }
   }
 
   @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+
+    from,
+    to {
+      border-color: transparent
+    }
+
+    50% {
+      border-color: orange;
+    }
   }
 
   @keyframes arrow-balance {
-    from, to { left: -50px }
-    50% { left: -30px }
+
+    from,
+    to {
+      left: -50px
+    }
+
+    50% {
+      left: -30px
+    }
   }
 }

@@ -1,0 +1,13 @@
+<div class="slider">
+  <div class="slider__container">
+    <p class="slider__container__text">
+      {{ fixedTitle }}
+    </p>
+
+    <ul class="slider__container__list">
+      <li class="slider__container__list__item" *ngFor="let text of sliderList">
+        {{ text }}
+      </li>
+    </ul>
+  </div>
+</div>
